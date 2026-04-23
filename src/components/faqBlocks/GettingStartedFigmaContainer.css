@@ -1,0 +1,188 @@
+/* Figma 9702:3166 — Vertical container (Getting started slot) */
+.gs-figma {
+  display: flex;
+  width: 100%;
+  max-width: 878px;
+  margin-inline: auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.gs-figma__intro {
+  display: flex;
+  width: 100%;
+  max-width: 878px;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.gs-figma__title {
+  margin: 0;
+  width: 100%;
+  color: #000103;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: 0;
+}
+
+.gs-figma__lede {
+  margin: 0;
+  width: 100%;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+
+.gs-figma__sheet {
+  display: flex;
+  width: 100%;
+  max-width: 878px;
+  margin-inline: auto;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.gs-figma__row {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px 60px;
+  padding-top: 32px;
+  min-height: 180px;
+  box-sizing: border-box;
+}
+
+.gs-figma__col {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.gs-figma__col-text {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.gs-figma__col-title {
+  margin: 0;
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.gs-figma__col-desc {
+  margin: 0;
+  max-width: 100%;
+  color: #808b9b;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+
+.gs-figma__link {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #2546b1;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.gs-figma__link:hover {
+  color: #1a358f;
+  text-decoration: underline;
+}
+
+.gs-figma__link:focus-visible {
+  outline: 2px solid #2546b1;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.gs-figma__link--inline {
+  gap: 4px;
+}
+
+.gs-figma__link-icon {
+  flex-shrink: 0;
+  color: #2546b1;
+}
+
+.gs-figma__divider {
+  height: 0;
+  width: 100%;
+  border: none;
+  border-top: 1px solid #dbe4ea;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .gs-figma__row {
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 0;
+    gap: 28px 40px;
+  }
+
+  .gs-figma__col {
+    flex: 1 1 calc(50% - 24px);
+    min-width: 200px;
+    max-width: 360px;
+  }
+
+  .gs-figma__col-title {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 520px) {
+  .gs-figma__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .gs-figma__col {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gs-figma__link {
+    transition: none;
+  }
+}

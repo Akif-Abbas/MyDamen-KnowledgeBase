@@ -1,0 +1,46 @@
+.page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 0 0 48px;
+  box-sizing: border-box;
+  background: #f2f6f8;
+}
+
+/* Centered white card: everything under the blue hero (search + FAQ) */
+.page__shell {
+  display: block;
+  width: min(1024px, calc(100% - 48px));
+  min-width: 0;
+  margin-top: 40px;
+  margin-inline: auto;
+  /* Do not stretch to full row width — keeps equal grey gutters left + right */
+  align-self: center;
+  flex: 1 1 auto;
+  padding: 40px 32px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.page__content {
+  display: flex;
+  width: 100%;
+  max-width: 878px;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: auto;
+  gap: 86px;
+  margin-top: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .page__shell {
+    width: calc(100% - 32px);
+    margin-top: 32px;
+    padding: 24px 16px;
+  }
+}

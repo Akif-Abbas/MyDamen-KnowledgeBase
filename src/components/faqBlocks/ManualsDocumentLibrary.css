@@ -1,0 +1,551 @@
+/* Figma 9702:6557 — Request Services document library */
+/* Bleed to panel inline padding (see `--faq-manuals-inline-pad` on `.faq-category-panel--manuals`) so toolbar, table, and pagination share one width with the FAQ column */
+.manuals-doc-lib {
+  display: flex;
+  --manuals-bleed: var(--faq-manuals-inline-pad, 32px);
+  width: calc(100% + 2 * var(--manuals-bleed));
+  max-width: none;
+  margin-top: 40px;
+  margin-inline: calc(-1 * var(--manuals-bleed));
+  flex-direction: column;
+  gap: 40px;
+  box-sizing: border-box;
+}
+
+.manuals-doc-lib__visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.manuals-doc-lib__caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.manuals-doc-lib__toolbar {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.manuals-doc-lib__toolbar-main {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 16px 20px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.manuals-doc-lib__search {
+  display: flex;
+  height: 40px;
+  flex: 1 1 200px;
+  min-width: 0;
+  max-width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  border: 1px solid #011736;
+  border-radius: 100px;
+  background: #fff;
+}
+
+.manuals-doc-lib__search-input {
+  min-width: 0;
+  flex: 1 1 auto;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #011736;
+}
+
+.manuals-doc-lib__search-input::placeholder {
+  color: #808b9b;
+}
+
+.manuals-doc-lib__search-input:focus {
+  outline: none;
+}
+
+.manuals-doc-lib__search:focus-within {
+  outline: 2px solid #2546b1;
+  outline-offset: 2px;
+}
+
+.manuals-doc-lib__search-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  color: #011736;
+}
+
+.manuals-doc-lib__search-svg {
+  display: block;
+}
+
+.manuals-doc-lib__filter {
+  display: flex;
+  height: 40px;
+  min-width: 141px;
+  flex: 1 1 141px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  background: #f2f6f8;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition: background-color 0.15s ease;
+}
+
+.manuals-doc-lib__filter:hover {
+  background: #e8eef2;
+}
+
+.manuals-doc-lib__filter:focus-visible {
+  outline: 2px solid #2546b1;
+  outline-offset: 2px;
+}
+
+.manuals-doc-lib__filter-label {
+  overflow: hidden;
+  color: #011736;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.manuals-doc-lib__filter-chevron {
+  display: block;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: #011736;
+}
+
+.manuals-doc-lib__download {
+  display: flex;
+  height: 40px;
+  flex: 0 0 auto;
+  margin-left: auto;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0;
+  background: #2546b1;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.15s ease;
+}
+
+.manuals-doc-lib__download:hover {
+  background: #1a358f;
+}
+
+.manuals-doc-lib__download:focus-visible {
+  outline: 2px solid #2546b1;
+  outline-offset: 3px;
+}
+
+.manuals-doc-lib__download-icon {
+  display: block;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: #fff;
+}
+
+/* Table block */
+.manuals-doc-lib__table-block {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.manuals-doc-lib__table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.manuals-doc-lib__table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-family: inherit;
+}
+
+.manuals-doc-lib__th {
+  height: 48px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e4e8eb;
+  color: #011736;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.manuals-doc-lib__th--check {
+  width: 52px;
+  padding-right: 0;
+  padding-left: 8px;
+}
+
+.manuals-doc-lib__th--title {
+  width: 46%;
+}
+
+.manuals-doc-lib__th--type {
+  width: 20%;
+}
+
+.manuals-doc-lib__th--division {
+  width: 18%;
+}
+
+.manuals-doc-lib__th--action {
+  width: 56px;
+  padding-right: 8px;
+}
+
+.manuals-doc-lib__td {
+  height: 64px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e4e8eb;
+  background: #fff;
+  color: #011736;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
+}
+
+.manuals-doc-lib__td--check {
+  width: 52px;
+  padding-right: 0;
+  padding-left: 8px;
+}
+
+.manuals-doc-lib__td--title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.manuals-doc-lib__td--type,
+.manuals-doc-lib__td--division {
+  white-space: nowrap;
+}
+
+.manuals-doc-lib__td--action {
+  width: 56px;
+  padding-right: 8px;
+  text-align: right;
+}
+
+.manuals-doc-lib__check-label {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.manuals-doc-lib__checkbox {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #2546b1;
+  cursor: pointer;
+}
+
+.manuals-doc-lib__checkbox:focus-visible {
+  outline: 2px solid #2546b1;
+  outline-offset: 2px;
+}
+
+.manuals-doc-lib__row-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: #2546b1;
+  cursor: pointer;
+}
+
+.manuals-doc-lib__row-download:hover {
+  background: rgba(37, 70, 177, 0.08);
+}
+
+.manuals-doc-lib__row-download:focus-visible {
+  outline: 2px solid #2546b1;
+  outline-offset: 2px;
+}
+
+.manuals-doc-lib__row-download-svg {
+  display: block;
+}
+
+/* Pagination */
+.manuals-doc-lib__pagination {
+  display: flex;
+  width: 100%;
+  min-height: 96px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  padding: 16px 0;
+  box-sizing: border-box;
+  border-top: 1px solid #e4e8eb;
+}
+
+.manuals-doc-lib__pagination-left {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.manuals-doc-lib__pagination-label,
+.manuals-doc-lib__range {
+  color: #011736;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.manuals-doc-lib__page-size {
+  height: 36px;
+  min-width: 64px;
+  padding: 0 8px 0 12px;
+  box-sizing: border-box;
+  border: 1px solid #d2d2d2;
+  border-radius: 0;
+  background: #fff;
+  color: #011736;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.manuals-doc-lib__page-size:focus-visible {
+  outline: 2px solid #2546b1;
+  outline-offset: 2px;
+}
+
+.manuals-doc-lib__pagination-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px 32px;
+}
+
+.manuals-doc-lib__page-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.manuals-doc-lib__page-nav {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid #011736;
+  border-radius: 20px;
+  background: #fff;
+  color: #011736;
+  cursor: pointer;
+}
+
+.manuals-doc-lib__page-nav:hover:not(:disabled) {
+  background: #f2f6f8;
+}
+
+.manuals-doc-lib__page-nav:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.manuals-doc-lib__page-nav:focus-visible {
+  outline: 2px solid #2546b1;
+  outline-offset: 2px;
+}
+
+.manuals-doc-lib__page-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.manuals-doc-lib__page-nav-icon--flip {
+  transform: scaleX(-1);
+}
+
+.manuals-doc-lib__page-num {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  background: transparent;
+  color: #011736;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.manuals-doc-lib__page-num:hover {
+  background: #f2f6f8;
+}
+
+.manuals-doc-lib__page-num--current {
+  background: #2546b1;
+  color: #fff;
+}
+
+.manuals-doc-lib__page-num--current:hover {
+  background: #1a358f;
+}
+
+.manuals-doc-lib__page-num:focus-visible {
+  outline: 2px solid #2546b1;
+  outline-offset: 2px;
+}
+
+.manuals-doc-lib__jump {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.manuals-doc-lib__jump-input {
+  width: 48px;
+  height: 36px;
+  box-sizing: border-box;
+  border: 1px solid #d2d2d2;
+  padding: 0 4px;
+  font-family: inherit;
+  font-size: 14px;
+  text-align: center;
+  color: #011736;
+}
+
+.manuals-doc-lib__jump-input:focus-visible {
+  outline: 2px solid #2546b1;
+  outline-offset: 2px;
+}
+
+.manuals-doc-lib__jump-suffix {
+  color: #011736;
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .manuals-doc-lib__toolbar-main {
+    flex-wrap: wrap;
+  }
+
+  .manuals-doc-lib__search {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .manuals-doc-lib__filter {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 0;
+  }
+
+  .manuals-doc-lib__download {
+    flex: 1 1 auto;
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .manuals-doc-lib__pagination {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .manuals-doc-lib__pagination-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .manuals-doc-lib__filter,
+  .manuals-doc-lib__download,
+  .manuals-doc-lib__page-nav,
+  .manuals-doc-lib__page-num {
+    transition: none;
+  }
+}

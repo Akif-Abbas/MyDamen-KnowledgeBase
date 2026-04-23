@@ -1,0 +1,48 @@
+/* Figma 9702:3497 — Heading (Title & Subtitle) */
+.vessel-overview-heading {
+  display: flex;
+  width: 100%;
+  max-width: 878px;
+  margin-inline: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.vessel-overview-heading__inner {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.vessel-overview-heading__title {
+  margin: 0;
+  width: 100%;
+  color: #000103;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.vessel-overview-heading__body {
+  margin: 0;
+  width: 100%;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  text-align: left;
+}
+
+@media (max-width: 520px) {
+  .vessel-overview-heading__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}

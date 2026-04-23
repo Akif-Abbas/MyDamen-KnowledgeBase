@@ -1,0 +1,342 @@
+.app-header {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 68px;
+  background: #2546b1;
+  box-sizing: border-box;
+  isolation: isolate;
+}
+
+.app-header__inner {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  /* Flush sidebar to viewport left; keep inset on the right for actions */
+  padding: 0 24px 0 0;
+  box-sizing: border-box;
+}
+
+.app-header__sidebar {
+  display: flex;
+  height: 68px;
+  flex-shrink: 0;
+  align-items: stretch;
+  align-self: stretch;
+  background: #fff;
+}
+
+.app-header__sidebar-main {
+  display: flex;
+  width: 187px;
+  align-items: center;
+  gap: 14px;
+  padding-left: 14px;
+}
+
+.app-header__menu-btn {
+  display: flex;
+  width: 41px;
+  height: 41px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 100px;
+  background: #fff;
+  cursor: pointer;
+  transition:
+    background-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.app-header__menu-btn:focus-visible {
+  outline: 2px solid #2546b1;
+  outline-offset: 2px;
+}
+
+.app-header__menu-btn:active {
+  background: #ebeff9;
+}
+
+.app-header__menu-icon-wrap {
+  display: flex;
+  width: 17px;
+  height: 14px;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-header__menu-icon-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  transition: opacity 0.18s ease;
+}
+
+.app-header__logo-row {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  align-items: center;
+}
+
+.app-header__divider {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+.app-header__divider img {
+  display: block;
+  width: 1px;
+  height: 41px;
+  max-width: none;
+  object-fit: fill;
+}
+
+.app-header__logo-wrap {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.app-header__logo {
+  display: block;
+  width: auto;
+  max-width: 72px;
+  height: 14px;
+  object-fit: contain;
+  /* Match Figma instance transforms on the logo raster (I9695:3119) */
+  transform: rotate(180deg) scaleX(-1);
+}
+
+.app-header__chevron-card {
+  display: flex;
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border: none;
+  background: #f2f2f2;
+  cursor: pointer;
+  transition: background-color 0.18s ease;
+}
+
+.app-header__chevron-card:focus-visible {
+  outline: 2px solid #2546b1;
+  outline-offset: -2px;
+}
+
+.app-header__chevron-card:active {
+  background: #dedede;
+}
+
+.app-header__chevron-wrap {
+  display: block;
+  width: 27px;
+  height: 27px;
+  overflow: hidden;
+}
+
+.app-header__chevron-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  transition: opacity 0.18s ease;
+}
+
+.app-header__actions {
+  display: flex;
+  height: 100%;
+  /* Fill space after sidebar so flex-end aligns to the viewport edge; avoids clipping the last pill. */
+  flex: 1 1 0%;
+  min-width: 0;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+  -webkit-overflow-scrolling: touch;
+  /* Reserve space so the last pill (Support) stays clear of the viewport edge / scrollbar. */
+  padding-inline-end: 24px;
+  scroll-padding-inline-end: 24px;
+  box-sizing: border-box;
+}
+
+.app-header__time {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0.2px;
+  color: #fff;
+  white-space: nowrap;
+  transition:
+    color 0.18s ease,
+    text-shadow 0.18s ease;
+}
+
+.app-header__pill {
+  display: flex;
+  height: 34px;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 7px;
+  padding: 6px;
+  border: none;
+  border-radius: 100px;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  transition:
+    background-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.app-header__pill:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.app-header__pill:active {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.app-header__pill-icon {
+  display: block;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.app-header__pill-text {
+  margin: 0;
+  padding: 3px 7px 3px 3px;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.app-header__pill-text--medium {
+  font-weight: 500;
+  line-height: 13px;
+}
+
+.app-header__pill-text--roman {
+  padding: 0 0 0 3px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.app-header__support-icon-wrap {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-header__support-icon {
+  display: block;
+  width: 17px;
+  height: 17px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .app-header__menu-btn:hover {
+    background: #f5f7fc;
+    box-shadow: 0 1px 3px rgba(37, 70, 177, 0.12);
+  }
+
+  .app-header__menu-btn:hover .app-header__menu-icon-wrap img {
+    opacity: 0.88;
+  }
+
+  .app-header__chevron-card:hover {
+    background: #e8e8e8;
+  }
+
+  .app-header__chevron-card:hover .app-header__chevron-wrap img {
+    opacity: 0.88;
+  }
+
+  .app-header__time:hover {
+    color: #f2f6ff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.28);
+  }
+
+  .app-header__pill:hover {
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@media (max-width: 1024px) {
+  .app-header__inner {
+    padding: 0 24px 0 0;
+  }
+
+  .app-header__sidebar-main {
+    width: auto;
+    min-width: 0;
+  }
+
+  .app-header__logo-wrap {
+    padding: 0 12px;
+  }
+
+  .app-header__actions {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 720px) {
+  .app-header__actions {
+    gap: 8px;
+  }
+
+  /* Icons-only for the two primary pills; keep Support label readable. */
+  .app-header__pill:not(:last-child) .app-header__pill-text {
+    display: none;
+  }
+
+  .app-header__pill {
+    padding: 6px 4px;
+  }
+
+  .app-header__time {
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-header__menu-btn,
+  .app-header__menu-icon-wrap img,
+  .app-header__chevron-card,
+  .app-header__chevron-wrap img,
+  .app-header__time,
+  .app-header__pill {
+    transition: none;
+  }
+}

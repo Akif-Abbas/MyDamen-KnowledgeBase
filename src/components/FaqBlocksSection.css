@@ -1,0 +1,160 @@
+.faq-blocks-section {
+  display: flex;
+  width: 100%;
+  max-width: 878px;
+  margin-inline: auto;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.faq-blocks-section__panel-wrap {
+  display: flex;
+  width: 100%;
+  max-width: 878px;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* FAQ row (Figma Container 9344:15273): 878×160 default / 184 hover, 4×200px tiles, 26px gaps */
+.faq-blocks-section__row {
+  display: flex;
+  width: 100%;
+  max-width: 878px;
+  min-height: 160px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+}
+
+button.faq-block {
+  display: flex;
+  width: 200px;
+  min-width: 200px;
+  height: 160px;
+  flex-direction: column;
+  align-items: stretch;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+  text-align: inherit;
+  background: #f2f6f8;
+  box-shadow: none;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    height 0.2s ease;
+}
+
+.faq-block__top {
+  display: flex;
+  height: 73px;
+  flex-shrink: 0;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 4px 0;
+  transition: height 0.2s ease;
+}
+
+.faq-block__icon-wrap {
+  overflow: hidden;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.faq-block__icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  object-position: bottom center;
+  transition: filter 0.2s ease;
+}
+
+.faq-block__bottom {
+  display: flex;
+  height: 73px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4px 16px;
+  transition: height 0.2s ease;
+}
+
+.faq-block__label {
+  margin: 0;
+  min-height: 36px;
+  color: #011736;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+.faq-block__label--multiline p {
+  margin: 0;
+  line-height: 18px;
+  transition: color 0.2s ease;
+}
+
+/* Active / hover (Figma 9344:15113): white, shadow, blue text, taller top — same footprint as before (184px card) */
+button.faq-block:is(:hover, :focus-visible),
+button.faq-block.faq-block--selected {
+  height: 184px;
+  background: #fff;
+  box-shadow: 0 5px 16px rgba(3, 30, 67, 0.15);
+}
+
+button.faq-block:is(:hover, :focus-visible) .faq-block__top,
+button.faq-block.faq-block--selected .faq-block__top {
+  height: 96px;
+}
+
+button.faq-block:is(:hover, :focus-visible) .faq-block__bottom,
+button.faq-block.faq-block--selected .faq-block__bottom {
+  height: 79px;
+}
+
+button.faq-block:is(:hover, :focus-visible) .faq-block__label,
+button.faq-block:is(:hover, :focus-visible) .faq-block__label--multiline p,
+button.faq-block.faq-block--selected .faq-block__label,
+button.faq-block.faq-block--selected .faq-block__label--multiline p {
+  color: #2546b1;
+}
+
+/* Tint raster icons toward Damen blue (Figma uses separate hover assets per icon) */
+button.faq-block:is(:hover, :focus-visible) .faq-block__icon,
+button.faq-block.faq-block--selected .faq-block__icon {
+  filter: brightness(0) saturate(100%) invert(22%) sepia(75%) saturate(2876%) hue-rotate(214deg)
+    brightness(92%) contrast(92%);
+}
+
+button.faq-block:focus-visible {
+  outline: 2px solid #2546b1;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button.faq-block,
+  .faq-block__top,
+  .faq-block__bottom,
+  .faq-block__icon,
+  .faq-block__label,
+  .faq-block__label--multiline p {
+    transition: none;
+  }
+}
+
+@media (max-width: 920px) {
+  .faq-blocks-section__row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

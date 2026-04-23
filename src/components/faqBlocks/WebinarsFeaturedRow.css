@@ -1,0 +1,114 @@
+/* Figma 9702:6989 — horizontal webinar cards; bleed matches FAQ row (see `--faq-webinars-inline-pad`) */
+.webinars-featured-row {
+  --webinars-featured-bleed: var(--faq-webinars-inline-pad, 32px);
+  display: grid;
+  width: calc(100% + 2 * var(--webinars-featured-bleed));
+  max-width: none;
+  margin-inline: calc(-1 * var(--webinars-featured-bleed));
+  box-sizing: border-box;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 60px;
+  align-items: start;
+}
+
+.webinars-featured-card {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.webinars-featured-card__video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 285 / 177;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #011736;
+  box-sizing: border-box;
+}
+
+.webinars-featured-card__thumb {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+.webinars-featured-card__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 200px;
+  background: #2546b1;
+  box-shadow: 0 5px 12px rgba(1, 23, 54, 0.1);
+  color: #fff;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+}
+
+.webinars-featured-card__play:hover {
+  background: #1a358f;
+}
+
+.webinars-featured-card__play:focus-visible {
+  outline: 2px solid #2546b1;
+  outline-offset: 3px;
+}
+
+.webinars-featured-card__play-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.webinars-featured-card__time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #808b9b;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.webinars-featured-card__schedule-icon {
+  display: block;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: #808b9b;
+}
+
+.webinars-featured-card__title {
+  margin: 0;
+  width: 100%;
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+
+@media (max-width: 900px) {
+  .webinars-featured-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
