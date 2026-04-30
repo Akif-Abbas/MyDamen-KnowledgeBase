@@ -118,8 +118,6 @@
   max-width: 72px;
   height: 14px;
   object-fit: contain;
-  /* Match Figma instance transforms on the logo raster (I9695:3119) */
-  transform: rotate(180deg) scaleX(-1);
 }
 
 .app-header__chevron-card {
