@@ -1,19 +1,18 @@
-<!-- Figma: My Damen Library  node 9799:1988 (Search icon). Color: Primary/MarineBlack. -->
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-  <path
-    d="M6.8 1.5a5.3 5.3 0 1 0 0 10.6 5.3 5.3 0 0 0 0-10.6Z"
-    stroke="#011736"
-    stroke-width="1.2"
-    stroke-miterlimit="10"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-  <path
-    d="M10.3 10.3 14.2 14.2"
-    stroke="#011736"
-    stroke-width="1.2"
-    stroke-miterlimit="10"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
+<!-- Figma: My Damen Library — node 9799:1988 (Search icon), 16×16 -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 16 16"
+  fill="none"
+  aria-hidden="true"
+>
+  <g>
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M6.67101 1.78971C4.09128 1.78971 2 3.881 2 6.46073C2 9.04046 4.09128 11.1317 6.67101 11.1317C7.67982 11.1317 8.61393 10.8119 9.3775 10.2682L12.899 13.7897L14 12.6887L10.4785 9.16722C11.0222 8.40365 11.342 7.46953 11.342 6.46073C11.342 3.881 9.25074 1.78971 6.67101 1.78971ZM6.67101 3.34672C8.39083 3.34672 9.78502 4.74091 9.78502 6.46073C9.78502 8.18055 8.39083 9.57474 6.67101 9.57474C4.95119 9.57474 3.557 8.18055 3.557 6.46073C3.557 4.74091 4.95119 3.34672 6.67101 3.34672Z"
+      fill="#011736"
+    />
+  </g>
 </svg>
