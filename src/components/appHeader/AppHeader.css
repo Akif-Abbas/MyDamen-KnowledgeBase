@@ -118,6 +118,7 @@
   max-width: 72px;
   height: 14px;
   object-fit: contain;
+  transform: rotate(180deg);
 }
 
 .app-header__chevron-card {
