@@ -1,4 +1,4 @@
-/** Hero Secondary — Bow Wave Orange graphic (Figma 9695:3161) */
+import bowWave from "../../assets/hero/bow-wave.svg";
 
-export const HERO_BOW_WAVE =
-  "https://www.figma.com/api/mcp/asset/9f029f12-12e7-4a34-b4af-17b5bb82f1a9";
+/** Hero bow graphic — Figma 9695:3161 (Bow Wave Orange). Bundled; MCP URLs 404 in production. */
+export const HERO_BOW_WAVE = bowWave;
