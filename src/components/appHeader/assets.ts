@@ -6,7 +6,7 @@ import notificationsIcon from "../../assets/app-header/notifications.svg";
 import sliderDivider from "../../assets/app-header/slider.svg";
 import supportIcon from "../../assets/app-header/support.svg";
 
-/** Figma 9344:32194 — bundled SVGs. Logo: 9799:2009, Cart: 9799:2027. (MCP URLs 404 in the browser.) */
+/** Bundled header SVGs (MCP asset URLs 404 in browser). */
 export const HEADER_IMG_MENU = menuIcon;
 export const HEADER_IMG_SLIDER = sliderDivider;
 export const HEADER_IMG_LOGO = logoMark;
